@@ -1,0 +1,47 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  password: String!
+  role: String!
+}
+
+type Fruit {
+  id: ID!
+  name: String!
+  price: Float!
+}
+
+type Vegetable {
+  id: ID!
+  name: String!
+  price: Float!
+}
+
+type Query {
+  getUsers: [User!]!
+  getUserById(id: Float!): User!
+  getUserByEmail(email: String!): User!
+  getFruits: [Fruit!]!
+  getFruitById(id: Float!): Fruit!
+  getVetetables: [Vegetable!]!
+  getVetetableById(id: Float!): Vegetable!
+}
+
+type Mutation {
+  createUser(username: String!, email: String!, password: String!): User!
+  patchUserRole(id: Float!, role: String!): User!
+  deleteUser(id: Float!): User!
+  registration(username: String!, email: String!, password: String!, role: String!): User!
+  login(email: String!, password: String!): String!
+  createFruit(name: String!, price: Float!): Fruit!
+  updateFruit(id: Float!, name: String!, price: Float!): Fruit!
+  deleteFruit(id: Float!): Fruit!
+  createVetetable(name: String!, price: Float!): Vegetable!
+  updateVetetable(id: Float!, name: String!, price: Float!): Vegetable!
+  deleteVetetable(id: Float!): Vegetable!
+}
