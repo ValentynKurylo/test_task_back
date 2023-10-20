@@ -14,13 +14,11 @@ export class AuthResolver {
         @Args('username') username: string,
         @Args('email') email: string,
         @Args('password') password: string,
-        @Args('role') role: RoleEnum,
     ): Promise<User> {
         const user = new User();
         user.username = username;
         user.email = email;
         user.password = password
-        user.role = role
         return await this.authService.registration(user);
     }
 
